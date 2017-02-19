@@ -24,6 +24,7 @@ public class HangmanGame {
         System.out.println(hangmanInstance.getAllLetters());
         do // The loop where the game is played.
         {
+            System.out.println(hangmanInstance.getSecret());
             // Prints the known-so-far and used letters.
             System.out.println(hangmanInstance.getKnownSoFar() + "\nUsed Letters: " + hangmanInstance.getUsedLetters());
 
@@ -41,7 +42,8 @@ public class HangmanGame {
             } else if (letterOccurence == -3) {
                 System.out.println("Game is over.");
             }
-            System.err.println("Number of Tries Left:  " + (6-hangmanInstance.getNumOfIncorrectTries()));
+            System.err.println("Number:  " + hangmanInstance.getNumOfIncorrectTries());
+            System.out.println(secretWord.equals(hangmanInstance.getKnownSoFar()));
         } while (!hangmanInstance.isGameOver()); // Checks if the game is over.
 
         // Prints the result.
